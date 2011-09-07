@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabelTrout", "BabelTrout\BabelTrout.csproj", "{1327EE71-D346-4B42-8ED1-91600ED6A4F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabelTrout.Tests", "BabelTrout.Tests\BabelTrout.Tests.csproj", "{47983D39-952F-40E1-B6D8-994C6F1DB01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabelTrout.DatabaseDeploy", "BabelTrout.DatabaseDeploy\BabelTrout.DatabaseDeploy.csproj", "{776F22BA-192C-4E85-9672-8E1449D5B0E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1327EE71-D346-4B42-8ED1-91600ED6A4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1327EE71-D346-4B42-8ED1-91600ED6A4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1327EE71-D346-4B42-8ED1-91600ED6A4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1327EE71-D346-4B42-8ED1-91600ED6A4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47983D39-952F-40E1-B6D8-994C6F1DB01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47983D39-952F-40E1-B6D8-994C6F1DB01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47983D39-952F-40E1-B6D8-994C6F1DB01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47983D39-952F-40E1-B6D8-994C6F1DB01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776F22BA-192C-4E85-9672-8E1449D5B0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776F22BA-192C-4E85-9672-8E1449D5B0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776F22BA-192C-4E85-9672-8E1449D5B0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776F22BA-192C-4E85-9672-8E1449D5B0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

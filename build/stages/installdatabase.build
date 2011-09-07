@@ -1,0 +1,16 @@
+<project name="InstallDatabase-Stage" basedir="." default="InstallDatabase" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="InstallDatabase">
+  
+    <unzip zipfile="${bld-pck.db.zip}" todir="${wksp.temp.install.db.dir}"/>
+    <exec  program="${db.deploy.bat}"
+           basedir="${wksp.temp.install.db.dir}" 
+           workingdir="${wksp.temp.install.db.dir}" />
+
+    <copy todir="${art.db.install.dir}" >
+      <fileset basedir="${wksp.temp.install.db.dir}">
+        <include name="*.run.log"/>
+      </fileset>
+    </copy>
+    
+  </target>
+</project>

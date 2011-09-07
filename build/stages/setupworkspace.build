@@ -1,0 +1,20 @@
+<project name="SetUpWorkspace" basedir="." default="SetUpWorkspace" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="SetUpWorkspace">
+    
+    <!-- Create the working directory where the assembly will be built-->
+    <mkdir dir="${wksp.sln.dir}"/>
+
+    <!-- Copy over all the files needed to build the assembly-->
+    <copy todir="${wksp.sln.dir}" >
+      <fileset basedir="${src.dir}">
+        <exclude name="*\bin\**" />
+        <exclude name="*\obj\**" />
+        <exclude name="*\.vs10x\**" />
+        <exclude name="*\.svn\**" />
+        <exclude name="_ReSharper*\**" />
+        <include name="**\*" />
+      </fileset>
+    </copy>
+    
+  </target>
+</project>

@@ -1,0 +1,7 @@
+<project name="TidyUp-Stage" basedir="." default="TidyUp" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="TidyUp">
+
+    <delete dir="${workspace.dir}" if="${directory::exists(workspace.dir)}" />
+
+  </target>
+</project>

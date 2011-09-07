@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<buildInfo>
+  <projectName>Babel Trout Database </projectName>
+  <companyName>Bill and Teds most excellent integration</companyName>
+  <versionMajor>1</versionMajor>
+  <versionMinor>0</versionMinor>
+  <versionPatch>0</versionPatch>
+  <buildNumber>1</buildNumber>
+  <revision>1</revision>
+  <version>1.0.0.0</version>
+  <repositoryPath>todo</repositoryPath>
+  <microsoftNetFramework>net-4.0</microsoftNetFramework>
+  <msbuildConfiguration>Release</msbuildConfiguration>
+  <msbuildPlatform>Any CPU</msbuildPlatform>
+  <builtWith>UppercuT v. 1.0.6.0</builtWith>
+</buildInfo>

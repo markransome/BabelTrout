@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34B12D58-36E5-4D51-A34E-C6E9FD53D70E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dropkick</RootNamespace>
+    <AssemblyName>dropkick</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Magnum, Version=1.0.0.188, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\references\magnum\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\references\Microsoft\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="roundhouse">
+      <HintPath>..\..\lib\references\roundhouse\roundhouse.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SolutionVersion.cs">
+      <Link>Properties\SolutionVersion.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\DeploymentPlanBuilder.cs" />
+    <Compile Include="Configuration\DropkickConfiguration.cs" />
+    <Compile Include="Configuration\Dsl\CommandLine\CommandLineOptions.cs" />
+    <Compile Include="Configuration\Dsl\CommandLine\ProtoCommandLineTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\FileCopyOptions.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoEncryptAppConfigTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSrss\Extensions.cs" />
+    <Compile Include="Configuration\Dsl\MsSrss\ProtoSsrsTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSrss\ReportOptions.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\ClearAclOptions.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\ProtoPathRemoveAclInheritanceTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Certificate\CertificateSecurityConfig.cs" />
+    <Compile Include="Configuration\Dsl\Security\Certificate\CertificateSecurityConfiguration.cs" />
+    <Compile Include="Configuration\Dsl\Security\Certificate\GrantReadCertificateOptions.cs" />
+    <Compile Include="Configuration\Dsl\Security\Certificate\ProtoGrantReadX509CertificatePrivateKeyTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\LocalPolicy\ProtoLogOnBatchTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Rights.cs" />
+    <Compile Include="Configuration\Dsl\Topshelf\Extension.cs" />
+    <Compile Include="Configuration\Dsl\Topshelf\TopshelfConfigurator.cs" />
+    <Compile Include="Configuration\Dsl\Topshelf\TopshelfOptions.cs" />
+    <Compile Include="Configuration\Dsl\WinService\WinServiceCreateOptions.cs" />
+    <Compile Include="Engine\DeploymentFinders\FindResult.cs" />
+    <Compile Include="FileSystem\PathConverter.cs" />
+    <Compile Include="HUB.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Log4NetLog.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Prompting\ConsolePromptService.cs" />
+    <Compile Include="StringInterpolation\Interpolator.cs" />
+    <Compile Include="StringInterpolation\CaseInsensitiveInterpolator.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\ProtoSetSensibleMsmqDefaults.cs" />
+    <Compile Include="Tasks\Files\BaseIoTask.cs" />
+    <Compile Include="Tasks\Files\CopyOptions.cs" />
+    <Compile Include="Tasks\Files\EmptyFolderTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoEmptyFolderTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\ProtoMsmqGrantWriteTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\ProtoMsmqGrantReadTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\ProtoMsmqGrantReadWriteTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\QueueSecurityConfiguration.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoGrantDataReaderTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoGrantDataWriterTask.cs" />
+    <Compile Include="Tasks\BaseTask.cs" />
+    <Compile Include="Tasks\Iis\Iis6Path.cs" />
+    <Compile Include="Tasks\Iis\ManagedRuntimeVersion.cs" />
+    <Compile Include="Tasks\CommandLine\RemoteDropkickExecutionTask.cs" />
+    <Compile Include="Tasks\Msmq\CreateRemoteMsmqQueueTask.cs" />
+    <Compile Include="Tasks\Msmq\RemoteExtension.cs" />
+    <Compile Include="Tasks\MsSsrs\PublishSsrsTask.cs" />
+    <Compile Include="Tasks\RoundhousE\DatabaseRecoveryMode.cs" />
+    <Compile Include="Tasks\RoundhousE\RoundhousEClientApi.cs" />
+    <Compile Include="Tasks\RoundhousE\RoundhousEMode.cs" />
+    <Compile Include="Tasks\Security\Acl\RemoveAclsInheritanceTask.cs" />
+    <Compile Include="Tasks\Security\BaseSecurityTask.cs" />
+    <Compile Include="Tasks\Security\Certificate\BaseSecurityCertificatePermissionsTask.cs" />
+    <Compile Include="Tasks\Security\Certificate\GrantReadCertificatePrivateKeyTask.cs" />
+    <Compile Include="Tasks\Security\Certificate\RemoteExtension.cs" />
+    <Compile Include="Tasks\Security\LocalPolicy\LogOnAsBatchTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\RemoteMsmqGrantReadTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\RemoteMsmqGrantReadWriteTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\MsmqGrantWriteTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\BaseSecuritySqlTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\CreateLoginTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\CreateRoleTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\CreateUserTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\GrantDataReaderTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\GrantDataWriterTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\GrantReadToAllTablesTask.cs" />
+    <Compile Include="Tasks\Security\MsSql\GrantWriteToAllTablesTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\MsSqlSecurityConfiguration.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\MsSqlSecurity.cs" />
+    <Compile Include="Exceptions\DeploymentConfigurationException.cs" />
+    <Compile Include="Configuration\Dsl\Dsn\ProtoDsnTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\FromOptions.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoCopyDirectoryTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoCopyFileTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoEncryptWebConfigTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\ProtoRenameTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\RenameOptions.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisProtoTask.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVersion.cs" />
+    <Compile Include="Configuration\Dsl\Msmq\ProtoMsmqTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\ProtoMsSqlTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\ProtoOutputSqlTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\ProtoRunSqlScriptTask.cs" />
+    <Compile Include="Configuration\Dsl\NetworkShare\ProtoFolderShareTask.cs" />
+    <Compile Include="Configuration\Dsl\Notes\Extension.cs" />
+    <Compile Include="Configuration\Dsl\PrototypicalServer.cs" />
+    <Compile Include="Configuration\Dsl\ProtoServer.cs" />
+    <Compile Include="Configuration\Dsl\RoundhousE\Extension.cs" />
+    <Compile Include="Configuration\Dsl\RoundhousE\RoundhousEOptions.cs" />
+    <Compile Include="Configuration\Dsl\RoundhousE\RoundhousEProtoTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\Extension.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\FileSecurityConfig.cs" />
+    <Compile Include="Configuration\Dsl\Security\LocalPolicy\LocalPolicyConfig.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\PathSecurityConfiguration.cs" />
+    <Compile Include="Configuration\Dsl\Security\LocalPolicy\ProtoLocalPolicy.cs" />
+    <Compile Include="Configuration\Dsl\Security\LocalPolicy\ProtoLogOnAsAServiceTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\ProtoPathClearAclsTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\ProtoPathGrantReadTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\ACL\ProtoPathGrantReadWriteTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoCreateLoginTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoCreateUserTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoGrantReadToAllTablesTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\ProtoGrantWriteToAllTablesTask.cs" />
+    <Compile Include="Configuration\Dsl\Security\ProtoSecurityOptions.cs" />
+    <Compile Include="Configuration\Dsl\Security\Msmq\QueueSecurityConfig.cs" />
+    <Compile Include="Configuration\Dsl\Security\SecurityOptions.cs" />
+    <Compile Include="Configuration\Dsl\Security\MsSql\MsSqlUserOptions.cs" />
+    <Compile Include="Configuration\Dsl\WinService\ProtoWinServiceCreateTask.cs" />
+    <Compile Include="Configuration\Dsl\WinService\ProtoWinServiceDeleteTask.cs" />
+    <Compile Include="Configuration\Dsl\WinService\ProtoWinServiceStartTask.cs" />
+    <Compile Include="Configuration\Dsl\WinService\ProtoWinServiceStopTask.cs" />
+    <Compile Include="Configuration\Dsl\WinService\ProtoWinServiceTask.cs" />
+    <Compile Include="DeploymentModel\PhysicalServer.cs" />
+    <Compile Include="Engine\DeploymentFinders\MultipleFinder.cs" />
+    <Compile Include="Engine\RoleToServerMap.cs" />
+    <Compile Include="DeploymentModel\DeploymentServer.cs" />
+    <Compile Include="Engine\DeploymentCommandLineParser.cs" />
+    <Compile Include="Engine\DeploymentFinders\SearchesForAnAssemblyNameContainingDeployment.cs" />
+    <Compile Include="Engine\DeploymentFinders\TypeWasSpecifiedAssumingItHasADefaultConstructor.cs" />
+    <Compile Include="Engine\DeploymentPlanDispatcher.cs" />
+    <Compile Include="DeploymentModel\DeploymentItem.cs" />
+    <Compile Include="DeploymentModel\DeploymentResult.cs" />
+    <Compile Include="DeploymentModel\DeploymentItemStatus.cs" />
+    <Compile Include="FileSystem\DotNetPath.cs" />
+    <Compile Include="FileSystem\Path.cs" />
+    <Compile Include="Prompting\PromptService.cs" />
+    <Compile Include="Settings\ServerMapParser.cs" />
+    <Compile Include="Settings\SettingsParser.cs" />
+    <Compile Include="Tasks\BaseProtoTask.cs" />
+    <Compile Include="Tasks\CommandLine\LocalCommandLineTask.cs" />
+    <Compile Include="Configuration\Dsl\CommandLine\Extension.cs" />
+    <Compile Include="Configuration\Dsl\Deployment.cs" />
+    <Compile Include="Exceptions\DeploymentException.cs" />
+    <Compile Include="Configuration\Dsl\DeploymentInspector.cs" />
+    <Compile Include="Configuration\Dsl\DeploymentInspectorSite.cs" />
+    <Compile Include="Tasks\CommandLine\RemoteCommandLineTask.cs" />
+    <Compile Include="Tasks\Files\CopyFileTask.cs" />
+    <Compile Include="Tasks\MsSsrs\ReportingService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tasks\RoundhousE\RoundhousETask.cs" />
+    <Compile Include="Tasks\Security\Acl\ClearAclsTask.cs" />
+    <Compile Include="Tasks\Security\Acl\GrantReadTask.cs" />
+    <Compile Include="Tasks\Security\Acl\GrantReadWriteTask.cs" />
+    <Compile Include="Tasks\Security\LocalPolicy\LogOnAsAServiceTask.cs" />
+    <Compile Include="Tasks\Security\LocalPolicy\LsaSecurity.cs" />
+    <Compile Include="Tasks\Msmq\DeleteLocalQueueTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\LocalMsmqGrantReadTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\LocalMsmqGrantReadWriteTask.cs" />
+    <Compile Include="Tasks\Security\Msmq\SetSensibleMsmqDefaults.cs" />
+    <Compile Include="Tasks\Security\WellKnownSecurityRoles.cs" />
+    <Compile Include="Tasks\Topshelf\LocalTopshelfTask.cs" />
+    <Compile Include="Tasks\Topshelf\RemoteTopshelfTask.cs" />
+    <Compile Include="Tasks\UserInteraction\PromptTask.cs" />
+    <Compile Include="Tasks\WaitTask.cs" />
+    <Compile Include="Configuration\Dsl\Notes\WaitProtoTask.cs" />
+    <Compile Include="Tasks\Dsn\DsnAction.cs" />
+    <Compile Include="Tasks\Dsn\DsnDriver.cs" />
+    <Compile Include="Configuration\Dsl\Dsn\DsnOptions.cs" />
+    <Compile Include="Tasks\Dsn\DsnTask.cs" />
+    <Compile Include="Configuration\Dsl\Dsn\Extension.cs" />
+    <Compile Include="Configuration\Dsl\Files\CopyOptions.cs" />
+    <Compile Include="Tasks\Files\DestinationCleanOptions.cs" />
+    <Compile Include="Tasks\Files\CopyDirectoryTask.cs" />
+    <Compile Include="Configuration\Dsl\Files\Extension.cs" />
+    <Compile Include="Tasks\Files\RenameTask.cs" />
+    <Compile Include="Tasks\Iis\BaseIisTask.cs" />
+    <Compile Include="Configuration\Dsl\Iis\Extension.cs" />
+    <Compile Include="Tasks\Iis\Iis7Task.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisSiteOptions.cs" />
+    <Compile Include="Tasks\Iis\Iis6Task.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVersionSelector.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVirtualDirectoryOptions.cs" />
+    <Compile Include="Configuration\Dsl\Msmq\Extension.cs" />
+    <Compile Include="Configuration\Dsl\Msmq\MsmqOptions.cs" />
+    <Compile Include="Tasks\Msmq\CreateLocalMsmqQueueTask.cs" />
+    <Compile Include="Configuration\Dsl\Msmq\QueueAddress.cs" />
+    <Compile Include="Tasks\MsSql\BaseSqlTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\DatabaseOptions.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\Extension.cs" />
+    <Compile Include="Tasks\MsSql\OutputSqlTask.cs" />
+    <Compile Include="Tasks\MsSql\RunSqlScriptTask.cs" />
+    <Compile Include="Configuration\Dsl\MsSql\SqlOptions.cs" />
+    <Compile Include="Configuration\Dsl\NetworkShare\Extensions.cs" />
+    <Compile Include="Configuration\Dsl\NetworkShare\FolderShareOptions.cs" />
+    <Compile Include="Tasks\NetworkShare\FolderShareTask.cs" />
+    <Compile Include="Configuration\Dsl\Notes\NoteProtoTask.cs" />
+    <Compile Include="Tasks\NoteTask.cs" />
+    <Compile Include="Configuration\Dsl\Role.cs" />
+    <Compile Include="DeploymentModel\Task.cs" />
+    <Compile Include="Tasks\WinService\BaseServiceTask.cs" />
+    <Compile Include="Prompting\Extension.cs" />
+    <Compile Include="Tasks\WinService\WinServiceCreateTask.cs" />
+    <Compile Include="Tasks\WinService\WinServiceDeleteTask.cs" />
+    <Compile Include="Tasks\WinService\WinServiceStartTask.cs" />
+    <Compile Include="Tasks\WinService\WinServiceStopTask.cs" />
+    <Compile Include="Engine\DeploymentFinders\AssemblyWasSpecifiedAssumingOnlyOneDeploymentClass.cs" />
+    <Compile Include="Engine\DeploymentArguments.cs" />
+    <Compile Include="Engine\DeploymentCommands.cs" />
+    <Compile Include="Configuration\Dsl\DropkickDeploymentInspector.cs" />
+    <Compile Include="DeploymentModel\DeploymentDetail.cs" />
+    <Compile Include="DeploymentModel\DeploymentRole.cs" />
+    <Compile Include="DeploymentModel\DeploymentPlan.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Configuration\Dsl\WinService\Extension.cs" />
+    <Compile Include="Configuration\Dsl\WinService\WinServiceOptions.cs" />
+    <Compile Include="Engine\DeploymentFinders\DeploymentFinder.cs" />
+    <Compile Include="Engine\Runner.cs" />
+    <Compile Include="Configuration\Dsl\ProtoTask.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wmi\ErrorControl.cs" />
+    <Compile Include="Wmi\ProcessReturnCode.cs" />
+    <Compile Include="Wmi\ServiceReturnCode.cs" />
+    <Compile Include="Wmi\ServiceStartMode.cs" />
+    <Compile Include="Wmi\ServiceType.cs" />
+    <Compile Include="Wmi\ShareReturnCode.cs" />
+    <Compile Include="Wmi\Win32Share.cs" />
+    <Compile Include="Wmi\WmiHelper.cs" />
+    <Compile Include="Wmi\WmiProcess.cs" />
+    <Compile Include="Wmi\WmiService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="targets\Microsoft.Application.targets" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project=".\targets\Microsoft.Application.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

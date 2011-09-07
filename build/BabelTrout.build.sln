@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D357EC56-31D5-4D1C-B961-E199A49D1EF1}"
+	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
+		build.build = build.build
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stages", "stages", "{F4598996-A44A-48F7-9294-8EF48E4742C8}"
+	ProjectSection(SolutionItems) = preProject
+		stages\builddropkickdbconfigurationassembly.build = stages\builddropkickdbconfigurationassembly.build
+		stages\clean.build = stages\clean.build
+		stages\createdropkickdbinstallpackage.build = stages\createdropkickdbinstallpackage.build
+		stages\installdatabase.build = stages\installdatabase.build
+		stages\setupworkspace.build = stages\setupworkspace.build
+		stages\tidyup.build = stages\tidyup.build
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "properties", "properties", "{98ACEE83-01D1-4242-A193-604391CB328B}"
+	ProjectSection(SolutionItems) = preProject
+		properties\properties.build = properties\properties.build
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F4598996-A44A-48F7-9294-8EF48E4742C8} = {D357EC56-31D5-4D1C-B961-E199A49D1EF1}
+		{98ACEE83-01D1-4242-A193-604391CB328B} = {D357EC56-31D5-4D1C-B961-E199A49D1EF1}
+	EndGlobalSection
+EndGlobal

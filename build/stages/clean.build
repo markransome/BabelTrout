@@ -1,0 +1,13 @@
+<project name="clean" basedir="." default="clean" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="Clean">
+    <delete dir="${workspace.dir}" if="${directory::exists(workspace.dir)}" />
+    <mkdir dir="${workspace.dir}" />
+
+    <delete dir="${build-package.dir}" if="${directory::exists(build-package.dir)}" />
+    <mkdir dir="${build-package.dir}" />
+
+    <delete dir="${artifacts.dir}" if="${directory::exists(artifacts.dir)}" />
+    <mkdir dir="${art.db.install.dir}"/>
+
+  </target>
+</project>

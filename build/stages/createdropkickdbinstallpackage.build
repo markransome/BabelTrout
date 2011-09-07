@@ -1,0 +1,40 @@
+<project name="CreateDropkickDBInstallPackage-Stage" basedir="." default="CreateDropkickDBInstallPackage" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="CreateDropkickDBInstallPackage">
+    <!-- Create the database installation directory-->
+    <mkdir dir="${wksp.db.deploy.output.dir}"/>
+
+    <!-- Copy over all the files needed to build the assembly-->
+    <echo message="Source: ${wksp.db.deploy.output.dir}"/>
+    <echo message="Target: ${bld-pck.db.dir}"/>
+    <copy todir="${bld-pck.db.dir}" >
+      <fileset basedir="${wksp.db.deploy.output.dir}">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+
+    <echo message="Source: ${res.dropkick.dir}"/>
+    <echo message="Target: ${bld-pck.db.dir}"/>
+    <copy todir="${bld-pck.db.dir}" >
+      <fileset basedir="${res.dropkick.dir}">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+
+    <echo message="Source: ${src.db.deploy.dbscripts.dir}"/>
+    <echo message="Target: ${bld-pck.db.dir}\Roundhouse"/>
+    <copy todir="${bld-pck.db.dir}\Roundhouse">
+      <fileset basedir="${src.db.deploy.dbscripts.dir}">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+
+    <zip zipfile="${bld-pck.db.zip}" >
+      <fileset basedir="${bld-pck.db.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </zip>
+
+    <delete dir="${bld-pck.db.dir}" />
+
+  </target>
+</project>

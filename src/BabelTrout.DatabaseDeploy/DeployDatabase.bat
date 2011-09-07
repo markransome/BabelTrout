@@ -1,0 +1,1 @@
+dk.exe execute /environment:development /deployment:BabelTrout.DatabaseDeploy.dll /settings:.\settings --silent

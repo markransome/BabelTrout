@@ -1,0 +1,52 @@
+<project name="properties" basedir="." default="properties" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="properties">
+    
+    <!-- Build Info -->
+    <property name="build.mode" value=""/>
+    <property name="build.stages" value="Clean,SetUpWorkspace,BuildDropKickDBConfigurationAssembly,CreateDropkickDBInstallPackage,InstallDatabase,TidyUp" />
+    
+    <if test="${build.mode == 'install'}">
+      <property name="build.stages" value="Clean,UpdateDatabaseFromPackage" />
+    </if>
+
+    <!-- UpdateDatabase VS Project -->
+    <property name="vs.sln.config"    value="Debug" />
+    <property name="dotnet40.dir"     value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319" overwrite="false" />
+    <property name="src.tkn"          value="src"/>
+    <property name="db.deploy"        value="BabelTrout.DatabaseDeploy"/>
+    <property name="db.deploy.bat"    value="DeployDatabase.bat"/>
+
+    <!-- High level directories -->
+    <property name="slashvar" 			    value="${string::last-index-of(build.dir,'\')}"      />
+    <property name="root.dir" 			    value="${string::substring(build.dir, 0, slashvar)}" />
+
+    <!-- artifacts properties -->
+    <property name="artifacts.dir" value="${root.dir}\artifacts"/>
+    <property name="art.db.install.dir" value="${artifacts.dir}\db-install"/>
+    
+    <!-- build-package properties -->
+    <property name="build-package.dir"  value="${root.dir}\build-package"/>
+    <property name="bld-pck.db.dir"     value="${build-package.dir}\db"/>
+    <property name="bld-pck.db.zip"     value="${build-package.dir}\db-install.zip"/>
+    
+    <!-- resources properties-->
+    <property name="resources.dir"    value="${root.dir}\resources"    readonly="true"    />
+    <property name="res.dropkick.dir" value="${resources.dir}\dropkick"/>
+
+    <!-- src properties-->
+    <property name="src.dir"                      value="${root.dir}\${src.tkn}" />
+    <property name="src.db.deploy.dbscripts.dir"  value="${src.dir}\${db.deploy}\dbscripts" />
+    
+    <!-- workspace properties -->
+    <property name="workspace.dir"              value="${root.dir}\workspace"    overwrite="false"  />
+    <property name="wksp.sln.dir"               value="${workspace.dir}\${src.tkn}" />
+    <property name="wksp.db.deploy.dir"         value="${wksp.sln.dir}\${db.deploy}"/>
+    <property name="wksp.db.deploy.csproj"      value="${wksp.db.deploy.dir}\${db.deploy}.csproj"/>
+    <property name="wksp.db.deploy.output.dir"  value="${wksp.db.deploy.dir}\bin\${vs.sln.config}"/>
+
+    <property name="wksp.temp.install.dir" value="${workspace.dir}\temp-install"/>
+    <property name="wksp.temp.install.db.dir" value="${wksp.temp.install.dir}\db"/>
+    
+  </target>
+</project>
+

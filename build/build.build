@@ -1,0 +1,12 @@
+<project name="BabelTrout" basedir="." default="RunStages" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <property name="build.dir" value="${project::get-base-directory()}" readonly="true"/>
+  <include buildfile="${build.dir}/properties/properties.build"/>
+
+  <target name="RunStages" depends="properties">
+    <foreach item="String" in="${build.stages}" delim="," property="stage">
+      <do>
+        <nant buildfile="${build.dir}/Stages/${stage}.build" target="${stage}" inheritall="true" inheritrefs="false" />
+      </do>
+    </foreach>
+  </target>
+</project>

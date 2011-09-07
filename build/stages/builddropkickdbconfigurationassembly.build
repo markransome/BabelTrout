@@ -1,0 +1,12 @@
+<project name="BuildDropKickDBConfigurationAssembly-Stage" basedir="." default="BuildDropKickDBConfigurationAssembly" xmlns="http://nant.sf.net/release/0.91-alpha2/nant.xsd">
+  <target name="BuildDropKickDBConfigurationAssembly">
+    <!-- Build DropKick Database Configuration Solution -->
+    <exec basedir="${wksp.sln.dir}"
+			program="${dotnet40.dir}\msbuild.exe">
+      <arg value="${wksp.db.deploy.csproj}" />
+      <arg value="/t:Rebuild" />
+      <arg value="/v:quiet" />
+      <arg value="/p:Configuration=${vs.sln.config}" />
+    </exec>
+  </target>
+</project>
